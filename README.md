@@ -13,7 +13,7 @@ For this lesson the following Python libraries are required: `matplotlib`, `nump
 
 ## Lesson steps
 
-The entire lesson is divided by 6 steps:
+The entire lesson is divided into 6 steps which should be completed in this order:
 1. Import dataset using as `Pandas` dataframe
 2. Create an empty chart, practise with `x_title`, `y_title`, plot legends
 3. Extract all necessary data for the chart. Associate some colors with game genres
