@@ -1,8 +1,9 @@
+import unittest
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from matplotlib.colors import to_hex
-import tests
+from tests import StyleTest
 
 bar_width = 0.2
 spacing = 0.1
@@ -38,6 +39,12 @@ for platform in all_platforms:
 fig, ax = plt.subplots(figsize=(10, 6))
 
 """You have all_platform dictionary in which data about genres for all platforms is stored,
-colors dictionary for colors for each genre. Now, plot the chart for all platforms"""
+colors dictionary for colors for each genre. Now, plot the chart for all platforms and stylize it."""
 
-tests.Test(fig, ax)
+suite = unittest.TestSuite()
+suite.addTest(StyleTest('test_verify_bars', fig=fig, ax=ax))
+suite.addTest(StyleTest('test_verify_legend', fig=fig, ax=ax))
+suite.addTest(StyleTest('test_features_testing', fig=fig, ax=ax))
+
+runner = unittest.TextTestRunner()
+runner.run(suite)

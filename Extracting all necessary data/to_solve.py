@@ -1,9 +1,13 @@
+import unittest
+
 import matplotlib.pyplot as plt
 from matplotlib.colors import to_hex
 import pandas as pd
-import tests
+from tests import TestCompareDictionaries
 
-df = pd.read_csv('dataset.csv')
+
+path_to_file = ''
+df = pd.read_csv(path_to_file)
 
 all_platforms = {'PS4': [],
                  'XOne': [],
@@ -18,4 +22,9 @@ Fill the dictionary for the data - all_platforms with some values,
 sorted by indexes and the dictionary for the colors - colors.
 """
 
-tester = tests.Tests(all_platforms, colors)
+suite = unittest.TestSuite()
+suite.addTest(TestCompareDictionaries('test_compare_dictionaries', data=all_platforms, colors=colors))
+
+runner = unittest.TextTestRunner()
+runner.run(suite)
+

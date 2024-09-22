@@ -18,14 +18,14 @@ Here:
 - `color` argument sets colors for bars
 - `width` sets bars width
 - `edgecolor` sets the color of bars edges
-- `label` sets the label of bars (so that we can use it for example while creating a legend. At this points we actually don't have to set up `label` for bars)
+- `label` sets the label of bars (so that we can use it for example while creating a legend. At this point we actually don't have to set up `label` for bars)
 
 Let's again agree on the following: the distance between bars is: `spacing = 0.1` and `bar_width = 0.2`. Make your `x_positions` array starting from `0`.
 # Task
 
-Build a bar chart for the `PS4` platform. The chart should show the number of games released for each genre. The chart should have the following features:
+Build a bar chart for the `PS4` platform. Do not change arguments that initialize x coordinates of the bars. The chart should show the number of games released for each genre. The chart should have the following features:
 
 - Title: `Number of games per genre for PS4`
 - X-axis label: `Genres`
 - Y-axis label: `Number of games`
-- Legend should contain all information about used colors, its `loc` arguement should be `'best'`
+- Legend should contain all information about used colors, its `loc` argument should be `'best'`

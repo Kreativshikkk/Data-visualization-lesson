@@ -1,8 +1,9 @@
+import unittest
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from matplotlib.colors import to_hex
-import tests
+from tests import TestChart
 
 bar_width = 0.2
 spacing = 0.1
@@ -46,24 +47,35 @@ labels_positions = []
 for platform, genre_counts in all_platforms.items():
     genre_colors = [colors[genre] for genre in genre_counts.index]
 
+    # Calculate the x positions for the bars and the labels
     x_positions = np.arange(start_x, start_x + len(genre_counts) * (bar_width + spacing) - spacing, bar_width + spacing)
     labels_positions.append(start_x + (len(genre_counts) * (bar_width + spacing) - spacing) / 2)
     x_labels.append(platform)
 
+    # Update the start_x for the next platform
     start_x = start_x + (bar_width + spacing) * len(genre_counts) + distance_between_platforms - spacing
 
+    # Plot the bars
     ax.bar(x_positions, genre_counts.values, color=genre_colors, width=bar_width, edgecolor='white')
 
+# Labeling
 ax.set_xlabel('platform')
 ax.set_ylabel('count')
 
+# Create the legend
 legend_labels = [plt.Line2D([0, 1], [0, 0], color=colors[genre], lw=5) for genre in
                  df['genre'].value_counts().sort_index().index]
 ax.legend(legend_labels, df['genre'].value_counts().sort_index().index, loc='best')
 
+# Set the platform names
 ax.set_xticks(labels_positions)
 ax.set_xticklabels(x_labels)
 
 plt.show()
 
-tests.Test(fig, ax)
+suite = unittest.TestSuite()
+suite.addTest(TestChart('verify_plot', fig=fig, ax=ax))
+suite.addTest(TestChart('verify_legend', fig=fig, ax=ax))
+
+runner = unittest.TextTestRunner()
+runner.run(suite)

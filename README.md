@@ -9,8 +9,7 @@ Hello! In this lesson we're gonna create single bar chart showing the number of 
 
 ## Required libraries
 
-For this lesson the following Python libraries are required: `matplotlib`, `numpy`, `pandas`. If you're working with Pycharm, then you can download them usinls
-g `Python Packages` button, otherwise using `pip`.
+For this lesson the following Python libraries are required: `matplotlib`, `numpy`, `pandas`. If you're working with Pycharm, then you can download them using `Python Packages` button, otherwise using `pip`. For more general information about these packages, you can read the official documentation.
 
 ## Lesson steps
 

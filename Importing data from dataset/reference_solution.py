@@ -1,3 +1,5 @@
+import unittest
+
 import pandas as pd
 import tests
 
@@ -17,4 +19,11 @@ genres_pc = len(df[df['platform'] == 'PC']['genre'].unique())
 all_genres = sorted(df['genre'].unique())
 genres_ps4 = df[df['platform'] == 'PS4']['genre'].value_counts().sort_index()
 
-tester = tests.Tests(genres_all_dataframe, genres_pc, all_genres, genres_ps4)
+suite = unittest.TestSuite()
+suite.addTest(tests.TestGenres('test_genres_all_dataframe', genres_all_dataframe=genres_all_dataframe))
+suite.addTest(tests.TestGenres('test_genres_pc', genres_pc=genres_pc))
+suite.addTest(tests.TestGenres('test_all_genres', all_genres=all_genres))
+suite.addTest(tests.TestGenres('test_genres_ps4', genres_ps4=genres_ps4))
+
+runner = unittest.TextTestRunner()
+runner.run(suite)
