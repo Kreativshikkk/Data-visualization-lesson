@@ -2,7 +2,7 @@
 At this step we will do the most of the work we have to. We will extend the previous step for all platforms.
 
 Here we have to pay more attention for `x_positions` argument, because we also have to keep intervals between different platforms. It is: `distance_between_platforms = 1`.
-At this step you are supposed to set labels for the platforms along the X-axis. So you have to calculate `x_labels, labels_positions` lists. So, positions will be the middle of all positions of the bars which are related to the platform. So at each iteration you have to append the following values:
+At this step you are supposed to set labels for the platforms along the X-axis. So you have to calculate `x_labels, labels_positions` lists. Positions will be the middle of all positions of the bars which are related to the platform. And at each iteration you have to append the following values:
 ```python
 labels_positions.append(start_x + (bars_amount * (bar_width + spacing) - spacing) / 2)
 x_labels.append(platform)

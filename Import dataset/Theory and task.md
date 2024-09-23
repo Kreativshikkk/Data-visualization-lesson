@@ -8,13 +8,13 @@ import pandas as pd
 data = pd.read_csv('file_name.csv')
 ```
 
-And in `data` variable we'll have Dataframe object. We can apply boolean masks for it and:
+And in `data` variable we'll have DataFrame object. We can apply boolean masks for it and:
 
 ```python
 ps4 = data[data['platform'] == 'PS4']
 ```
 
-get Dataframe for only `PS4` platform. We can also index it and get all necessary data, for example:
+get DataFrame for only `PS4` platform. We can also index it and get all necessary data, for example:
 
 ```python
 ps4_genres = data[data['platform'] == 'PS4']['genre']
@@ -36,4 +36,4 @@ You have to import dataset into your file, find and calculate the following thin
 1. Amount of genres in the whole dataframe
 2. Amount of genres in PC platform
 3. The list of all genres in sorted order
-4. Amount of games of each genre in PS4 platform in sorted order
+4. Amount of games of each genre in PS4 platform in sorted index order

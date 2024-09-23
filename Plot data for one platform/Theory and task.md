@@ -1,7 +1,7 @@
 # Theory
 In this step we are gonna build a bar chart only for `PS4` platform. It is guaranteed, that all genres are "non-empty" so you don't have to create zero-height bars at the chart. Let's talk about how to make the legend as in the example chart.
 
-At the second step we considered `matplotlib`'s `Line2D` objects. So we want to initialize them and put as the legend `handles` and put the list of corresponding colors as legend `labels`.
+At the second step we considered `matplotlib`'s `Line2D` objects. So we want to initialize them, put as the legend `handles` and put the list of corresponding colors as legend `labels`.
 Let's agree that each color will be an object with these parameters:
 ```python
 plt.Line2D([0, 1], [0, 0], color=colors[genre], lw=5)
@@ -23,7 +23,7 @@ Here:
 Let's again agree on the following: the distance between bars is: `spacing = 0.1` and `bar_width = 0.2`. Make your `x_positions` array starting from `0`.
 # Task
 
-Build a bar chart for the `PS4` platform. Do not change arguments that initialize x coordinates of the bars. The chart should show the number of games released for each genre. The chart should have the following features:
+Build a bar chart for the `PS4` platform. Do not change arguments that initialize x coordinates of the bars (and its width). The chart should show the number of games released for each genre. The chart should have the following features:
 
 - Title: `Number of games per genre for PS4`
 - X-axis label: `Genres`

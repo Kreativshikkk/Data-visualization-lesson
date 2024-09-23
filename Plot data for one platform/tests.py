@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib
 from matplotlib.colors import to_hex
 import matplotlib.pyplot as plt
 import unittest
@@ -22,9 +23,15 @@ class TestChart(unittest.TestCase):
 
         expected_positions = np.arange(12) * (0.2 + 0.1) - 0.1
         expected_heights = [142, 28, 17, 19, 9, 1, 18, 52, 38, 6, 42, 5]
-        for bar, expected_height, expected_position in zip(self.ax.patches, expected_heights, expected_positions):
+
+        colors = ['#3182bd', '#6baed6', '#c6dbef', '#fd8d3c', '#fdae6b', '#31a354', '#a1d99b', '#c7e9c0', '#9e9ac8', '#dadaeb', '#636363', '#bdbdbd']
+
+        for bar, expected_height, expected_position, expected_facecolor in zip(self.ax.patches, expected_heights, expected_positions, colors):
+            self.assertAlmostEqual(bar.get_width(), 0.2, places=4, msg=f'Expected bar width 0.2, but got {bar.get_width()}')
+            self.assertEqual(bar.get_edgecolor(), matplotlib.colors.to_rgba('white'), f'Expected white edge color, but got {bar.get_edgecolor()}')
             self.assertEqual(bar.get_height(), expected_height, f'Expected bar height {expected_height}, but got {bar.get_height()}')
             self.assertAlmostEqual(bar.get_x(), expected_position, places=4, msg=f'Expected bar position {expected_position}, but got {bar.get_x()}')
+            self.assertEqual(to_hex(bar.get_facecolor()), expected_facecolor, f'Expected facecolor {expected_facecolor}, but got {to_hex(bar.get_facecolor())}')
 
     def test_verify_legend(self):
         legend = self.ax.get_legend()

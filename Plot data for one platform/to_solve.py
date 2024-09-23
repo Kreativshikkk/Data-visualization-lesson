@@ -1,5 +1,4 @@
 import unittest
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -17,7 +16,7 @@ colors = {genre: to_hex(cmap(i / len(all_genres))) for i, genre in enumerate(all
 fig, ax = plt.subplots(figsize=(10, 6))
 
 """You have colors dictionary from the previous step.
-Write your bars plotting, axes labeling and titling, legend initialization here"""
+Write your bars plotting, axes labeling and titling, legend initialization for PS4 platform here"""
 
 suite = unittest.TestSuite()
 suite.addTest(TestChart('test_verify_bars', fig=fig, ax=ax))
