@@ -11,7 +11,7 @@ Write your code here. Solve the task from .md file by changing values of the fol
 1. Int: Amount of genres in the whole dataframe (genres_all_dataframe)
 2. Int: Amount of genres in PC platform (genres_pc)
 3. List: The list of all genres in sorted order (all_genres)
-4. Series: Amount of games of each genre in PS4 platform (genres_ps4) in sorted order
+4. Series: Amount of games of each genre in PS4 platform (genres_ps4) in sorted index order
 """
 
 genres_all_dataframe = len(df['genre'].unique())

@@ -1,5 +1,4 @@
 import unittest
-
 import matplotlib.pyplot as plt
 from matplotlib.colors import to_hex
 import pandas as pd
@@ -15,6 +14,7 @@ all_platforms = {'PS4': [],
 cmap = plt.get_cmap('tab20c')
 
 colors = {}
+
 """
 Fill the dictionary for the data - all_platforms with some values, 
 sorted by indexes and the dictionary for the colors - colors.
